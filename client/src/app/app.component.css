@@ -1,0 +1,27 @@
+.policy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.policy ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.policy ul li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s linear;
+    padding-right: 20px;
+}
+
+.policy-link a {
+    color: black;
+    text-decoration: none;
+}
+
+.policy-link a:hover {
+    text-decoration: underline;
+}

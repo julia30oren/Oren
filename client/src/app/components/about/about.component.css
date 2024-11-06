@@ -1,0 +1,148 @@
+#apple {
+    max-width: 800px;
+    margin: auto
+}
+
+rect {
+    fill: url(#grad1);
+    stroke-width: 5px;
+    stroke: grey;
+    fill-opacity: 0;
+}
+
+.color {
+    animation: col 2.5s ease-in-out;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.first-block {
+    display: flex;
+    flex-direction: column;
+}
+
+#idea1 {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#idea2 {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+svg {
+    padding: 20px;
+}
+
+@keyframes col {
+    0% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+
+    90% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+
+    95% {
+        fill-opacity: .1;
+        stroke-opacity: .1;
+    }
+
+    100% {
+        fill-opacity: .5;
+        stroke-opacity: 1;
+    }
+}
+
+#e path {
+    stroke: rgb(189, 189, 189);
+}
+
+.partners {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+
+.partners img {
+    max-width: 10%;
+}
+
+.about-block {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.block-1 {
+    background-image: url('../../../../public/bg_02.jpg');
+    background-position: top;
+
+}
+
+.block-2 {
+    background-image: url('../../../../public/bg_02.jpg');
+    background-position: bottom;
+}
+
+.block-bg {
+    padding: 50px 0px;
+}
+
+.block-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    text-align: center;
+    margin: auto;
+    opacity: 1;
+
+}
+
+.block-1 .block-txt,
+.block-2 .block-txt {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 18px;
+}
+
+.block-txt h1,
+.block-txt p {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* pad */
+@media only screen and (max-device-width: 1100px) {
+
+}
+
+/* phone */
+@media only screen and (max-device-width: 768px) {
+    #apple,
+    #idea1,
+    #idea2 {
+        width: 90vw;
+        margin: 2vh auto;
+    }  
+    svg {
+        padding: 0;
+    }
+      .block-txt {
+        width: 90%;
+        margin: auto;
+    }
+
+    .partners img {
+        max-width: 35%;
+        padding: .5vh 0;
+    }
+}

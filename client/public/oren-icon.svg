@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 68">
+  <rect x=".5" y=".5" width="75" height="66" style="fill: #fff;"/>
+  <g>
+    <rect x="55.14" y="25.55" width="9.55" height="18.38" style="fill: #005e9f; stroke: #000; stroke-miterlimit: 10;"/>
+    <path d="m64.69,25.55h0c0-6.69-5.47-12.59-12.16-12.59h-4.48v7.8c.12,0,3.27,0,3.38.02,2.13.24,3.72,2.73,3.72,4.77h9.55Z" style="fill: #005e9f; stroke: #000; stroke-miterlimit: 10;"/>
+    <rect x="38.49" y="12.95" width="9.55" height="43.57" style="fill: #005e9f; stroke: #000; stroke-miterlimit: 10;"/>
+    <path d="m64.69,43.93h0c0,6.69-5.47,12.59-12.16,12.59h-4.48v-7.8c.12,0,3.27,0,3.38-.02,2.13-.24,3.72-2.73,3.72-4.77h9.55Z" style="fill: #005e9f; stroke: #000; stroke-miterlimit: 10;"/>
+  </g>
+  <g>
+    <polygon points="4.14 56.73 13.69 56.73 25.11 12.95 15.56 12.95 4.14 56.73" style="fill: #c82127; stroke: #000; stroke-miterlimit: 10;"/>
+    <polygon points="36.86 56.63 27.31 56.63 15.9 12.85 25.45 12.85 36.86 56.63" style="fill: #c82127; stroke: #000; stroke-miterlimit: 10;"/>
+    <rect x="12.9" y="41.78" width="15.15" height="7.68" style="fill: #c82127; stroke: #000; stroke-miterlimit: 10;"/>
+        <polygon points="4.14 56.73 13.69 56.73 25.11 12.95 15.56 12.95 4.14 56.73" style="fill: none; stroke: #000; stroke-miterlimit: 10;"/>
+    <polygon points="36.86 56.63 27.31 56.63 15.9 12.85 25.45 12.85 36.86 56.63" style="fill: none; stroke: #000; stroke-miterlimit: 10;"/>
+  </g>
+</svg>

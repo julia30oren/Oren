@@ -1,0 +1,270 @@
+.st0 {
+  fill: #FFFFFF;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.st2 {
+  fill: #7E8083;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.st3 {
+  fill: #ED2024;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.st4 {
+  fill: #426FB6;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+/* HEADER */
+@supports (animation-timeline: view()) {
+  @keyframes fade-out {
+    to {
+      background-size: 150%;
+    }
+  }
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes max-out {
+    to {
+      max-width: 100%;
+    }
+  }
+
+  .hero {
+    animation: fade-out linear both;
+    animation-timeline: view();
+    animation-range: exit -100px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  nav {
+    animation: max-out linear both;
+    animation-timeline: view();
+    animation-range-start: 80vh;
+    animation-range-end: 100vh;
+  }
+
+  nav:after {
+    animation: appear linear both;
+    animation-timeline: view();
+    animation-range-start: 60vh;
+    animation-range-end: 100vh;
+  }
+
+  .logo svg {
+    max-width: 450px;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .notice:after {
+    content: " animation-timeline of scroll and view are currently not supported in your browser.";
+  }
+}
+
+nav {
+  min-width: 50vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 1em;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  min-height: 3rem;
+  backdrop-filter: blur(0.3em);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  z-index: 100;
+}
+
+nav ul {
+  padding-right: 1em;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+nav ul li,
+nav ul a {
+  text-decoration: none;
+  color: #0e2c50;
+  list-style: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.5s linear;
+}
+
+nav ul li:hover {
+  font-weight: 600;
+  text-decoration: underline #0e2c50;
+}
+
+.hero {
+  margin: 0 auto;
+  min-height: calc(80vh);
+  max-height: calc(100vh - 70px);
+  background-image: url("../../../../public/bg_01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: -0% top;
+  display: grid;
+  align-content: center;
+  container-type: inline-size;
+}
+
+.hero>div {
+  background-color: white;
+  margin: 0;
+  border-radius: 0 170px 170px 0;
+  padding: 50px;
+  max-width: fit-content;
+}
+
+.hero h1 {
+  font-size: clamp(1rem, 3.5cqi, 5rem);
+  font-weight: 100;
+  max-width: 30vw;
+}
+
+nav:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(90deg,
+      #0e2c50,
+      #0287bf,
+      #e32332,
+      #7f8183,
+      #b2b9bf,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #b2b9bf,
+      #e32332,
+      #0e2c50);
+  -webkit-background: linear-gradient(90deg,
+      #0e2c50,
+      #0287bf,
+      #e32332,
+      #7f8183,
+      #b2b9bf,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #b2b9bf,
+      #e32332,
+      #0e2c50);
+  ;
+  -moz-background: linear-gradient(90deg,
+      #0e2c50,
+      #0287bf,
+      #e32332,
+      #7f8183,
+      #b2b9bf,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #b2b9bf,
+      #e32332,
+      #0e2c50);
+  ;
+}
+
+.logo {
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 10px;
+  font-size: 36px;
+  color: rgb(240, 240, 240);
+  height: 70px;
+  display: flex;
+}
+
+.active {
+  font-weight: 700;
+}
+
+/* pad */
+@media only screen and (max-device-width: 1100px) {
+  .hero {
+    @supports (animation-timeline: view()) {
+      .logo svg {
+        max-width: 90vw;
+      }
+    }
+
+    height: 30vh;
+    background-position: -100% 50%;
+  }
+
+  .hero {
+    min-height: 40vh;
+    max-height: 50vh;
+    background-image: url("../../../../public/bg_01_mob.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: -0% top;
+    display: grid;
+    align-content: center;
+    container-type: inline-size;
+  }
+
+  .hero>div {
+    background-color: white;
+    margin: 0;
+    border-radius: 0 170px 170px 0;
+    padding: 20px 10px;
+    max-width: 60vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(1rem, 3.5cqi, 5rem);
+    font-weight: 100;
+    max-width: 30vw;
+  }
+
+  .logo svg {
+    max-width: 50vw;
+  }
+
+  nav {
+    max-width: 90vw;
+  }
+}
+
+/* phone */
+@media only screen and (max-device-width: 768px) {}

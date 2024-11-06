@@ -1,0 +1,89 @@
+.post {
+    max-width: 800px;
+    margin: auto;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btns button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sharer-btn {
+    width: 40%;
+}
+
+.like-btn {
+    width: 18%;
+}
+
+button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+svg {
+    width: 18px;
+    max-height: 18px;
+    margin-right: 7px;
+}
+
+.post-img-main {
+    width: 100%;
+    margin: auto;
+}
+
+small {
+    color: grey;
+}
+
+.bubble {
+    margin-top:14px;
+    position: relative;
+    background: #ffffff;
+    color: #7d7d7d;
+    font-size: 16px;
+    line-height: 18px;
+    filter: drop-shadow(0px 1px 2px #A3A3A3);
+    text-align: center;
+    height: 28px;
+    border-radius: 7px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    border-width: 0 10px 10px;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+p {
+    padding: 14px 0;
+}
+
+.post{
+    margin-bottom: 100px;
+}

@@ -1,0 +1,16 @@
+<app-header></app-header>
+<router-outlet id="top"></router-outlet>
+<app-footer></app-footer>
+<!-- policy -->
+<div class="policy mrg-t-20" style="text-align: center; font-size: 14px;">
+    <ul>
+        <li routerLink="/policy" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+            <small>Privacy Policy</small>
+        </li>
+        <li routerLink="/terms" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+            <small>Terms of Use</small>
+        </li>
+    </ul>
+    <br>
+    <small style="padding-bottom: 20px;">All Rights Reserved {{title}} © {{date | date:'YYYY'}}.</small>
+</div>
