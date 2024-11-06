@@ -90,10 +90,12 @@ function createPostsTable() {
 
 function createPosteLTable() {
     connection.query(`CREATE TABLE ${process.env.POSTELTABLE} (
+                id BIGINT NOT NULL AUTO_INCREMENT,
                 post_id BIGINT NOT NULL,
                 el_plaicement BIGINT NOT NULL,
                 el_type VARCHAR(2048) NOT NULL,
-                el_value VARCHAR(4096) NOT NULL
+                el_value VARCHAR(4096) NOT NULL,
+                PRIMARY KEY (`+ 'id' + `)
                 )ENGINE = InnoDB`,
 
         (err, result) => {

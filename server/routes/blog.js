@@ -29,7 +29,7 @@ function getPostByIdQueryWith(params) {
   try {
     return [
       `SELECT * FROM ${DATABASE}.${POSTSTABLE}, ${DATABASE}.${POSTELTABLE} 
-      WHERE id=post_id and id=${id}
+      WHERE ${DATABASE}.${POSTSTABLE}.id = ${DATABASE}.${POSTELTABLE}.post_id and ${DATABASE}.${POSTSTABLE}.id=${id}
       ORDER BY el_plaicement ASC;`,
       [...Object.values(params)],
     ];
