@@ -42,7 +42,7 @@
 
         <div class="mrg-t-20" *ngIf="post.extra.length>0">
             <div *ngFor="let item of post.extra">
-                <h3 *ngIf="item.el_type === 'h3'">{{ item.el_value }}</h3>
+                <h3 class="mrg-t-20" *ngIf="item.el_type === 'h3'">{{ item.el_value }}</h3>
                 <p *ngIf="item.el_type === 'paragraph'">{{ item.el_value }}</p>
                 <p *ngIf="item.el_type === 'bold'"><b>{{ item.el_value }}</b></p>
                 <img *ngIf="item.el_type === 'image'" src="{{ item.el_value }}" width="100%">

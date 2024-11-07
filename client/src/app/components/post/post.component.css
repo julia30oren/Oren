@@ -84,6 +84,14 @@ p {
     padding: 14px 0;
 }
 
+b{
+    color: black;
+}
+
 .post{
     margin-bottom: 100px;
+}
+
+h3{
+    font-size: xx-large;
 }
