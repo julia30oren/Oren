@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { DATABASE, POSTSTABLE, POSTELTABLE } = process.env;
+const { DB_NAME, POSTSTABLE, POSTELTABLE } = process.env;
 const express = require("express");
 const router = express.Router();
 const pool = require("../pool");
@@ -7,7 +7,7 @@ const pool = require("../pool");
 // Queryes
 function getAllPostsQuery(params) {
   return [
-    `SELECT * FROM ${DATABASE}.${POSTSTABLE};`,
+    `SELECT * FROM ${DB_NAME}.${POSTSTABLE};`,
     [...Object.values(params)],
   ];
 }
@@ -16,7 +16,7 @@ function getPostByIdQuery(params) {
   const { id } = params;
   try {
     return [
-      `SELECT * FROM ${DATABASE}.${POSTSTABLE} 
+      `SELECT * FROM ${DB_NAME}.${POSTSTABLE} 
       WHERE id=${id}`,
       [...Object.values(params)],
     ];
@@ -28,8 +28,8 @@ function getPostByIdQueryWith(params) {
   const { id } = params;
   try {
     return [
-      `SELECT * FROM ${DATABASE}.${POSTSTABLE}, ${DATABASE}.${POSTELTABLE} 
-      WHERE ${DATABASE}.${POSTSTABLE}.id = ${DATABASE}.${POSTELTABLE}.post_id and ${DATABASE}.${POSTSTABLE}.id=${id}
+      `SELECT * FROM ${DB_NAME}.${POSTSTABLE}, ${DB_NAME}.${POSTELTABLE} 
+      WHERE ${DB_NAME}.${POSTSTABLE}.id = ${DB_NAME}.${POSTELTABLE}.post_id and ${DB_NAME}.${POSTSTABLE}.id=${id}
       ORDER BY el_plaicement ASC;`,
       [...Object.values(params)],
     ];
@@ -40,7 +40,7 @@ function getPostByIdQueryWith(params) {
 function addPostViewQuery(params, col) {
   const { id } = params;
   return [
-    `UPDATE ${DATABASE}.${POSTSTABLE} SET ${col} = IFNULL(${col}, 0) + 1 WHERE id = ${id}`,
+    `UPDATE ${DB_NAME}.${POSTSTABLE} SET ${col} = IFNULL(${col}, 0) + 1 WHERE id = ${id}`,
     [...Object.values(params)],
   ];
 }
@@ -48,7 +48,7 @@ function addPostViewQuery(params, col) {
 function createNewPostQuery(params) {
   const { post_title, post_img_url, post_description, created_date, reading_time } = params;
   return [
-    `INSERT INTO ${DATABASE}.${POSTSTABLE} (post_title,post_img_url,post_description,created_date) 
+    `INSERT INTO ${DB_NAME}.${POSTSTABLE} (post_title,post_img_url,post_description,created_date) 
     VALUES("${post_title}","${post_img_url}","${post_description}","${created_date}", "${reading_time}");`,
     [...Object.values(params)],
   ]
@@ -57,7 +57,7 @@ function createNewPostQuery(params) {
 function addPostExtraQuery(params) {
   const { post_id, el_plaicement, el_type, el_value } = params;
   return [
-    `INSERT INTO ${DATABASE}.${POSTELTABLE} (post_id,el_plaicement,el_type,el_value) 
+    `INSERT INTO ${DB_NAME}.${POSTELTABLE} (post_id,el_plaicement,el_type,el_value) 
     VALUES("${post_id}","${el_plaicement}","${el_type}","${el_value}");`,
     [...Object.values(params)],
   ]
@@ -66,7 +66,7 @@ function addPostExtraQuery(params) {
 function editPostQuery(params) {
   const { post_id, key, value } = params;
   return [
-    `UPDATE ${DATABASE}.${POSTSTABLE} 
+    `UPDATE ${DB_NAME}.${POSTSTABLE} 
     SET ${key} = '${value}'
     WHERE id = ${post_id};`,
     [...Object.values(params)],

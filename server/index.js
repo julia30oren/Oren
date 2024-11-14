@@ -7,9 +7,9 @@ const app = express();
 var DB_state = '';
 
 const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
 });
 
 function logState() {
@@ -108,7 +108,7 @@ function createPosteLTable() {
 }
 
 function ifTablesEXIST() {
-    DB_state = "Database " + process.env.DATABASE + ' connected.';
+    DB_state = "Database " + process.env.DB_NAME + ' connected.';
     logState();
 
     connection.query(`SHOW TABLES LIKE '${process.env.CLIENTSTABLE}'`, (err, res) => {
@@ -137,10 +137,10 @@ function ifTablesEXIST() {
 }
 
 function createDatabase() {
-    connection.query(`CREATE DATABASE ${process.env.DATABASE}`, (err, res) => {
+    connection.query(`CREATE DATABASE ${process.env.DB_NAME}`, (err, res) => {
         if (err) throw err;
         else {
-            DB_state = `Database ${process.env.DATABASE} was created.`;
+            DB_state = `Database ${process.env.DB_NAME} was created.`;
             ifDatabaseEXIST();
             createClientsTable();
             createAdminTable();
@@ -149,7 +149,7 @@ function createDatabase() {
 }
 
 function ifDatabaseEXIST() {
-    connection.query(`USE ${process.env.DATABASE}`, (err, res) => err ? createDatabase() : ifTablesEXIST());
+    connection.query(`USE ${process.env.DB_NAME}`, (err, res) => err ? createDatabase() : ifTablesEXIST());
 }
 
 connection.connect((err) => err ? console.log(err.message) : ifDatabaseEXIST());

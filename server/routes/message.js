@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { DATABASE, CLIENTSTABLE, MAIL, MAILAPPPASSWORD, COMPANY_DOMAIN, COMPANY_NAME } = process.env;
+const { DB_NAME, CLIENTSTABLE, MAIL, MAILAPPPASSWORD, COMPANY_DOMAIN, COMPANY_NAME } = process.env;
 const express = require("express");
 const router = express.Router();
 const pool = require("../pool");
@@ -78,7 +78,7 @@ async function sendEmailToAdmin(email, message) {
 function connectionRequestQuery(params) {
     const { email, message } = params;
     return [
-        `INSERT INTO ${DATABASE}.${CLIENTSTABLE} (client_email, client_message) VALUES ('${email}', '${message}')`,
+        `INSERT INTO ${DB_NAME}.${CLIENTSTABLE} (client_email, client_message) VALUES ('${email}', '${message}')`,
         [...Object.values(params)],
     ];
 }
