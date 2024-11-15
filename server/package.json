@@ -8,7 +8,7 @@
   },
   "scripts": {
     "server": "nodemon index.js",
-    "client":"cd.. && cd client && ng serve",
+    "client":"cd .. && cd client && ng serve",
     "dev": "concurrently -k -p \"[{name}]\" -n \"server,client\" -c \"blue,magenta\" \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
