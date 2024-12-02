@@ -25,7 +25,7 @@
                 <p></p>
                 <p>{{post.post_description | slice:0:150}}...</p>
                 <div class="reed-more-line">
-                    <small>Last updated {{post.created_date|date:'dd'}} {{post.created_date|date:'MMM'}}</small>
+                    <small>Updated {{post.created_date|date:'dd'}} {{post.created_date|date:'MMM'}} {{post.created_date|date:'YYYY'}}</small>
                     <a id="{{post.id}}" (click)="openPost($event)">Read More &#10140;</a>
                 </div>
             </div>

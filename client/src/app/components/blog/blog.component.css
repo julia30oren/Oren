@@ -88,3 +88,7 @@
         min-height: 250px;
     }
 }
+
+a{
+    cursor: pointer;
+}
