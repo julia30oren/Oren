@@ -108,7 +108,7 @@ function createPosteLTable() {
 }
 
 function ifTablesEXIST() {
-    DB_state = "Database " + process.env.DB_NAME + ' connected.';
+    DB_state = "Database " + process.env.DB_NAME + " connected.";
     logState();
 
     connection.query(`SHOW TABLES LIKE '${process.env.CLIENTSTABLE}'`, (err, res) => {
